@@ -1,11 +1,9 @@
-FROM python:3.9
-
-WORKDIR /app
-
-COPY requirements.txt .
-
-RUN pip install --no-cache-dir -r requirements.txt
-
-COPY . .
-
-CMD ["python", "yt.py"]
+version: '3.8'
+services:
+  myservice:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/app
+    command: python yt.py
