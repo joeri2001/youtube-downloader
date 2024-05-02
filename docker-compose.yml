@@ -7,3 +7,4 @@ services:
     volumes:
       - .:/app
     command: python yt.py
+    tty: true
